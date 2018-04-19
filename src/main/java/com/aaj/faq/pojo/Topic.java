@@ -1,4 +1,4 @@
-package com.faqs.models;
+package com.aaj.faq.pojo;
 
 import java.io.Serializable;
 
@@ -6,11 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
-@IdClass(TopicId.class)
 @Entity
 @NamedQueries({ @NamedQuery(name = "Topic.findAll", query = "SELECT s FROM Student s"),
 		@NamedQuery(name = "Topic.findATopic", query = "SELECT s FROM Student s WHERE s.stdid = :stdid"),
@@ -19,21 +17,23 @@ public class Topic implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int topicId;
-	@Id
-	private String topicName;
-	
+	private int		topicId;
+	private String	topicName;
+
 	public int getTopicId() {
 		return topicId;
 	}
+
 	public void setTopicId(int topicId) {
 		this.topicId = topicId;
 	}
+
 	public String getTopicName() {
 		return topicName;
 	}
+
 	public void setTopicName(String topicName) {
 		this.topicName = topicName;
 	}
-	
+
 }

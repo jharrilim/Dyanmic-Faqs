@@ -1,4 +1,4 @@
-package com.faqs.models;
+package com.aaj.faq.pojo;
 
 import java.io.Serializable;
 
