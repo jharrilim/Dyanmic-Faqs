@@ -65,7 +65,16 @@ public class FaqDao implements Repository<Faq> {
 
 	@Override
 	public void delete(int id) {
-
+		try {
+			EntityTransaction et = em.getTransaction();
+			Faq faq = em.find(Faq.class, id);
+			if (faq == null) return;
+			et.begin();
+			em.remove(faq);
+			et.commit();
+		} catch(RollbackException e) {
+			e.printStackTrace(System.err);
+		}
 	}
 	
 }
