@@ -20,7 +20,6 @@ public class ListTopics extends HttpServlet {
 	private final TopicDao topicDao;
 	
 	public ListTopics() {
-		super();
 		topicDao = new TopicDao();
 	}
 	

@@ -19,6 +19,10 @@ public class FaqDao implements Repository<Faq> {
 		em = EntityManagerFactoryManager.getEntityManagerFactory().createEntityManager();
 	}
 
+	public FaqDao() {
+		
+	}
+	
 	public Faq last() {
 		return (Faq)em.createNamedQuery(FaqConstants.Names.FIND_LAST_FAQ).getResultList().get(0);
 	}

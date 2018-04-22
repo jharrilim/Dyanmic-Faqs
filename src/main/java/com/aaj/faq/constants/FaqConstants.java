@@ -15,9 +15,9 @@ public class FaqConstants {
 	
 	public class Queries {
 			
-		public static final String FIND_ALL = "SELECT f FROM FAQ f";
-		public static final String FIND_BY_ID = "SELECT f FROM FAQ f WHERE f.topicId = :topicId";
-		public static final String FIND_LAST_FAQ = "SELECT MAX(f.topicId) FROM FAQ ORDER BY f.topicId DESC";
+		public static final String FIND_ALL = "SELECT f FROM Faq f";
+		public static final String FIND_BY_ID = "SELECT f FROM Faq f WHERE f.topicId = :topicId";
+		public static final String FIND_LAST_FAQ = "SELECT MAX(f.topicId) as id FROM Faq f ORDER BY id DESC";
 		
 		private Queries() { }
 	}

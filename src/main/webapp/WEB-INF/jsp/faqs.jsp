@@ -2,6 +2,15 @@
 <jsp:include page="partial/header.jsp" />
 <div class="container">
 	<h2>JavaEE FAQs</h2>
+	<div class="well">
+		<form method="POST" action="${pageContext.request.contextPath}/Faqs">
+			<div class="form-group">
+				<label for="search">Search</label>
+				<input type="text" name="search" id="search" />
+				<input type="submit" value="Search" />
+			</div>
+		</form>
+	</div>
 	<table class="table-striped table-hover table-responsive">
 		<thead>
 			<tr>

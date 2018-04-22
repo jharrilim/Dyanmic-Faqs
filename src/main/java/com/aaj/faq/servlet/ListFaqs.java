@@ -19,7 +19,6 @@ public final class ListFaqs extends HttpServlet {
 	private final FaqDao faqDao;
 	
 	public ListFaqs() {
-		super();
 		faqDao = new FaqDao();
 	}
 	

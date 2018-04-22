@@ -17,6 +17,10 @@ public class TopicDao implements Repository<Topic> {
 		em = EntityManagerFactoryManager.getEntityManagerFactory().createEntityManager();
 	}
 
+	public TopicDao() {
+		
+	}
+	
 	public Topic last() {
 		return (Topic) em.createNamedQuery(TopicConstants.Names.FIND_LAST_TOPIC).getResultList().get(0);
 	}
