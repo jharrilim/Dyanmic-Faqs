@@ -10,9 +10,9 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Topic.findAll", query = "SELECT s FROM Student s"),
-		@NamedQuery(name = "Topic.findATopic", query = "SELECT s FROM Student s WHERE s.stdid = :stdid"),
-		@NamedQuery(name = "Faq.findLastTopicTopicID", query = "SELECT MAX(s.stdid) FROM Student s ORDER BY s.stdid DESC") })
+@NamedQueries({ @NamedQuery(name = "Topic.findAll", query = "SELECT t FROM topic s"),
+		@NamedQuery(name = "Topic.findATopic", query = "SELECT t FROM Topic t WHERE t.topicId = :topicId"),
+		@NamedQuery(name = "Faq.findLastTopicID", query = "SELECT MAX(t.topicId) FROM Topic t ORDER BY t.topic DESC") })
 public class Topic implements Serializable {
 
 	private static final long serialVersionUID = 2165660184640081105L;

@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
 
-import com.aaj.faq.constants.FaqConstants;
+import com.aaj.faq.constants.TopicConstants;
 import com.aaj.faq.persistence.EntityManagerFactoryManager;
 import com.aaj.faq.pojo.Topic;
 
@@ -18,19 +18,19 @@ public class TopicDao implements Repository<Topic> {
 	}
 
 	public Topic last() {
-		return (Topic)em.createNamedQuery(FaqConstants.Names.FIND_LAST_FAQ).getResultList().get(0);
+		return (Topic)em.createNamedQuery(TopicConstants.Names.FIND_LAST_TOPIC).getResultList().get(0);
 	}
 	
 	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Topic> all() {
-		return em.createNamedQuery(FaqConstants.Names.FIND_ALL).getResultList();
+		return em.createNamedQuery(TopicConstants.Names.FIND_ALL).getResultList();
 	}
 
 	@Override
 	public Topic select(int id) {
-		return (Topic) em.createNamedQuery(FaqConstants.Names.FIND_BY_ID)
+		return (Topic) em.createNamedQuery(TopicConstants.Names.FIND_BY_ID)
 				.setParameter("topicId", id)
 				.getResultList()
 				.get(0);
