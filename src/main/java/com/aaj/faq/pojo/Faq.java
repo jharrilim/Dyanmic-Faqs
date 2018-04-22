@@ -9,14 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.NamedQuery;
 
+import org.hibernate.engine.spi.NamedQueryDefinitionBuilder;
+
 import com.aaj.faq.pojo.TopicId;
 
 import javax.persistence.NamedQueries;
+import com.aaj.faq.constants.FaqConstants;
 
 @Entity
-@NamedQueries({ @NamedQuery(name = "Faq.findAll", query = "SELECT f FROM FAQ f"),
-		@NamedQuery(name = "Faq.findAFaq", query = "SELECT f FROM FAQ f WHERE f.topicId = :topicId"),
-		@NamedQuery(name = "Faq.findLastFaqTopicID", query = "SELECT MAX(f.topicId) FROM FAQ ORDER BY f.topicId DESC") })
+@NamedQueries({ @NamedQuery(name = FaqConstants.Names.FIND_ALL, query = FaqConstants.Queries.FIND_ALL),
+		@NamedQuery(name = FaqConstants.Names.FIND_BY_ID, query = FaqConstants.Queries.FIND_BY_ID),
+		@NamedQuery(name = FaqConstants.Names.FIND_LAST_FAQ, query = FaqConstants.Queries.FIND_LAST_FAQ) })
 @IdClass(TopicId.class)
 public class Faq implements Serializable {
 

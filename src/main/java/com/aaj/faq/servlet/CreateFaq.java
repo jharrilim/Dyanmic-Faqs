@@ -8,18 +8,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/faq/create")
-public class CreateFaqServlet extends HttpServlet {
+@WebServlet("Faqs/Create")
+public class CreateFaq extends HttpServlet {
 
+	private static final long serialVersionUID = -6639927197699940139L;
+
+	public CreateFaq() {
+		super();
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
-		req.getRequestDispatcher("jsp/createFaq.jsp").forward(req, res);
+		req.getRequestDispatcher("/WEB-INF/jsp/createFaq.jsp").forward(req, res);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException {
-		
+		doGet(req, res);
 	}
 }

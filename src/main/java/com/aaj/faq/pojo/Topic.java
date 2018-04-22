@@ -15,6 +15,8 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "Faq.findLastTopicTopicID", query = "SELECT MAX(s.stdid) FROM Student s ORDER BY s.stdid DESC") })
 public class Topic implements Serializable {
 
+	private static final long serialVersionUID = 2165660184640081105L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int		topicId;
