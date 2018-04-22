@@ -12,10 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class CreateFaq extends HttpServlet {
 
 	private static final long serialVersionUID = -6639927197699940139L;
-
-	public CreateFaq() {
-		super();
-	}
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) 

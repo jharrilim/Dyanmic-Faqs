@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.RollbackException;
+import javax.persistence.TransactionRequiredException;
 
 import com.aaj.faq.pojo.Faq;
 import com.aaj.faq.persistence.EntityManagerFactoryManager;
@@ -18,6 +19,11 @@ public class FaqDao implements Repository<Faq> {
 		em = EntityManagerFactoryManager.getEntityManagerFactory().createEntityManager();
 	}
 
+	public Faq last() {
+		return (Faq)em.createNamedQuery(FaqConstants.Names.FIND_LAST_FAQ).getResultList().get(0);
+	}
+	
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Faq> all() {
@@ -47,14 +53,19 @@ public class FaqDao implements Repository<Faq> {
 
 	@Override
 	public void update(Faq item) {
-		// TODO Auto-generated method stub
-
+		try {
+			EntityTransaction et = em.getTransaction();
+			et.begin();
+			em.merge(item);
+			et.commit();
+		} catch(RollbackException e) {
+			e.printStackTrace(System.err);
+		}
 	}
 
 	@Override
 	public void delete(int id) {
-		// TODO Auto-generated method stub
 
 	}
-
+	
 }

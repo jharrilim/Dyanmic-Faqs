@@ -11,15 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 public final class ListFaqs extends HttpServlet {
 	private static final long serialVersionUID = 2133282937099499326L;
 
-	public ListFaqs() {
-		super();
-	}
-
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/WEB-INF/jsp/faqs.jsp").forward(request, response);
 	}
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
