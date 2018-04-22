@@ -7,6 +7,27 @@
 <title>Create FAQ</title>
 </head>
 <body>
-	<H1>Hi lets create faqs k</H1>
+	<H1>Add a FAQ</H1>
+	<form>
+		<div class="form-group">
+			<label>Topic ID</label>
+			<select></select>
+		</div>
+		<div class="form-group">
+			<label>Question ID</label>
+			<input type="text" name="questionId" id="questionId" />
+		</div>
+		<div class="form-group">
+			<label>Question</label>
+			<input type="text" name="question" id="question" />
+		</div>
+		<div class="form-group">
+			<label>Answer</label>
+			<input type="text" name="answer" id="answer" />
+		</div>
+		<div class="form-group">
+			<input class="btn btn-primary" type="submit" value="Create FAQ" />
+		</div>
+	</form>
 </body>
 </html>

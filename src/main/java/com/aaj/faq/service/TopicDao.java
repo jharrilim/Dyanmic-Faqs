@@ -18,10 +18,9 @@ public class TopicDao implements Repository<Topic> {
 	}
 
 	public Topic last() {
-		return (Topic)em.createNamedQuery(TopicConstants.Names.FIND_LAST_TOPIC).getResultList().get(0);
+		return (Topic) em.createNamedQuery(TopicConstants.Names.FIND_LAST_TOPIC).getResultList().get(0);
 	}
-	
-	
+
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Topic> all() {
@@ -30,9 +29,7 @@ public class TopicDao implements Repository<Topic> {
 
 	@Override
 	public Topic select(int id) {
-		return (Topic) em.createNamedQuery(TopicConstants.Names.FIND_BY_ID)
-				.setParameter("topicId", id)
-				.getResultList()
+		return (Topic) em.createNamedQuery(TopicConstants.Names.FIND_BY_ID).setParameter("topicId", id).getResultList()
 				.get(0);
 	}
 
@@ -43,7 +40,8 @@ public class TopicDao implements Repository<Topic> {
 			et.begin();
 			em.persist(item);
 			et.commit();
-		} catch(RollbackException e) {
+		}
+		catch (RollbackException e) {
 			e.printStackTrace(System.err);
 		}
 
@@ -56,7 +54,8 @@ public class TopicDao implements Repository<Topic> {
 			et.begin();
 			em.merge(item);
 			et.commit();
-		} catch(RollbackException e) {
+		}
+		catch (RollbackException e) {
 			e.printStackTrace(System.err);
 		}
 	}
@@ -66,11 +65,13 @@ public class TopicDao implements Repository<Topic> {
 		try {
 			EntityTransaction et = em.getTransaction();
 			Topic topic = em.find(Topic.class, id);
-			if (topic == null) return;
+			if (topic == null)
+				return;
 			et.begin();
 			em.remove(topic);
 			et.commit();
-		} catch(RollbackException e) {
+		}
+		catch (RollbackException e) {
 			e.printStackTrace(System.err);
 		}
 	}
