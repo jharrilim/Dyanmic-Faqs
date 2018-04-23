@@ -45,13 +45,17 @@
 			<version>3.5.6-Final</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
+ 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>6.0.6</version>
-			<scope>runtime</scope>
+			<scope>provided</scope>
 		</dependency>
-
+ 		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.activation</groupId>
 			<artifactId>activation</artifactId>
@@ -155,14 +159,12 @@
 			<artifactId>taglibs-standard-impl</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.apache.taglibs/taglibs-standard-spec -->
 		<dependency>
 			<groupId>org.apache.taglibs</groupId>
 			<artifactId>taglibs-standard-spec</artifactId>
 			<version>1.2.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.jboss.spec.javax.transaction</groupId>
 			<artifactId>jboss-transaction-api_1.2_spec</artifactId>

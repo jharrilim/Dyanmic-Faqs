@@ -10,6 +10,7 @@
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
@@ -27,5 +28,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Program Files/Java/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/mysql-connector-java-5.1.46/mysql-connector-java-5.1.46.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

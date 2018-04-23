@@ -1,6 +1,7 @@
 package com.aaj.faq.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import com.aaj.faq.service.FaqDao;
 
 @WebServlet("/Faqs")
 public final class ListFaqs extends HttpServlet {
+
 	private static final long serialVersionUID = 2133282937099499326L;
 
 	private final FaqDao faqDao;
@@ -33,7 +35,21 @@ public final class ListFaqs extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doGet(request, response);
+		String searchId = request.getParameter("search");
+		try {
+			int id = Integer.parseInt(searchId);
+			List<Faq> faqs = new ArrayList<Faq>();
+			faqs.add(faqDao.select(id));
+			request.setAttribute("faqs", faqs);
+		}
+		catch (NumberFormatException e) {
+			List<Faq> faqs = faqDao.all();
+			request.setAttribute("faqs", faqs);			
+		}
+		finally {
+			request.getRequestDispatcher("/WEB-INF/jsp/faqs.jsp").forward(request, response);
+		}
+
 	}
 
 }
