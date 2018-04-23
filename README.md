@@ -1,4 +1,5 @@
 ## Installation
+### Wildfly MySql JDBC Driver
   To install this application, you must first make sure your
   instance of Wildfly has the MySql JDBC driver. If it does
   not have it, you may copy the folder that is provided.
@@ -24,4 +25,7 @@
 
   Official RedHat documentation for this process can be found here:
   https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/administration_and_configuration_guide/install_a_jdbc_driver_as_a_core_module1
-  
+### Application
+  To install the application, simply drag the WAR file onto the Wildfly
+  server in eclipse and it will run automatically. Navigate to
+  http://localhost:8080/Faqs/ to view the application.
